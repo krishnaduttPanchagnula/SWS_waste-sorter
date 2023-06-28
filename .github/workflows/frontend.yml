@@ -26,5 +26,5 @@ jobs:
 
       - name: Copy Build Artifacts
         run: |
-          cp -r build/* api/static/
-          cp build/index.html api/templates/index.html
+          cp -r ./build/* ./api/static/
+          cp ./build/index.html ./api/templates/index.html
