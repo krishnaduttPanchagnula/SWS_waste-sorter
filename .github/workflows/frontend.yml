@@ -8,6 +8,11 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+     env:
+      working-directory: ./frontend
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
 
     steps:
       - name: Checkout Repository
