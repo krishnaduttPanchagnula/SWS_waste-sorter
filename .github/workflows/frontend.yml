@@ -8,11 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-     env:
-      working-directory: ./frontend
     defaults:
       run:
-        working-directory: ${{ env.working-directory }}
+        working-directory: ./frontend
 
     steps:
       - name: Checkout Repository
@@ -26,6 +24,5 @@ jobs:
 
       - name: Copy Build Artifacts
         run: |
-          cd frontend
-          cp -r build/* ../api/static/
-          cp build/index.html ../api/templates/index.html
+          cp -r frontend/build/* api/static/
+          cp frontend/build/index.html api/templates/index.html
