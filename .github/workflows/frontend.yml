@@ -23,6 +23,10 @@ jobs:
         run: npm run build
         env:
           CI: false
+      - name: Remove the old builds
+        run: |
+             rm -rf ./api/static/*
+             rm ./api/templates/index.html
 
       - name: Copy Build Artifacts
         run: |
