@@ -21,6 +21,8 @@ jobs:
 
       - name: Build Frontend
         run: npm run build
+        env:
+          CI: false
 
       - name: Copy Build Artifacts
         run: |
