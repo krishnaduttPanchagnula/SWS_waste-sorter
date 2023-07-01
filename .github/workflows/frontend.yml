@@ -29,8 +29,9 @@ jobs:
         
       - name: Copy Build Artifacts
         run: |
-          cp -r ./build/* ./api/static/
-          cp ./build/index.html ./api/templates/index.html
+          mkdir ../api/static
+          cp -r build/static/* ../api/static/ 
+          cp build/index.html ../api/templates/index.html
           git add api/
           git config --local user.email "krishnadutt123@gmail.com"
           git config --local user.name "krishnaduttpanchagnula"
