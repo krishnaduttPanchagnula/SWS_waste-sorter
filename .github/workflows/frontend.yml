@@ -23,12 +23,12 @@ jobs:
         run: npm run build
         env:
           CI: false
-      - name: Remove the old builds
-        run: |
-             rm -rf ./api/static/*
-             rm ./api/templates/index.html
-
       - name: Copy Build Artifacts
         run: |
           cp -r ./build/* ./api/static/
           cp ./build/index.html ./api/templates/index.html
+          git add api/
+          git config --local user.email "krishnadutt123@gmail.com"
+          git config --local user.name "krishnaduttpanchagnula"
+          git commit -m "Upload build to app folder" || true
+          git push
