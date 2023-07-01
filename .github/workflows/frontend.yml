@@ -24,7 +24,9 @@ jobs:
         env:
           CI: false
       - name: List files
-        run : ls -lrt
+        run : |
+          ls ./build/ -lrt
+        
       - name: Copy Build Artifacts
         run: |
           cp -r ./build/* ./api/static/
