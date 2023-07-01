@@ -23,6 +23,8 @@ jobs:
         run: npm run build
         env:
           CI: false
+      - name: List files
+        run : ls -lrt
       - name: Copy Build Artifacts
         run: |
           cp -r ./build/* ./api/static/
